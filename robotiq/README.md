@@ -1,3 +1,5 @@
+This is a modified, Force Torque fixed version!
+
 # Robotiq
 
 [ROS-Industrial][] robotiq meta-package.  See the [ROS wiki][] page for more information.  
