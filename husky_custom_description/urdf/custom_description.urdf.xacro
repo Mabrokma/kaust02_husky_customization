@@ -34,6 +34,41 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 
   <!-- Insert Customizations Below -->
 
+
+  <xacro:include filename="$(find robotiq_s_model_visualization)/cfg/s-model_articulated_macro.xacro" />
+
+
+  <!-- Spawn and Join Gripper -->
+  <xacro:s-model_articulated prefix="" />
+
+  <joint name="gripper_base" type="fixed">
+    <parent link="ur5_arm_ee_link" />
+      <child link="palm" />
+      <origin xyz="0.11 0.0 0.0" rpy="0.0 -0.784 -1.57" />
+  </joint>
+
+  <!-- Sensor Mount and other custom parts -->
+  <link name="FT300_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.06" radius="0.035"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+
+            <collision>
+                <geometry>
+                    <cylinder length="0.0475" radius="0.035"/>
+                </geometry>
+            </collision>
+       </link>
+
+      <joint name="FT300_joint" type="fixed">
+          <origin xyz="0.03 0 0" rpy="0 1.57 0" />
+          <parent link="ur5_arm_ee_link" />
+          <child link="FT300_link" />
+      </joint>
+
   <!-- Spawn the KAUST02 sensors mesh -->
   <link name="sensors_link">
     <visual>
