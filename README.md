@@ -16,6 +16,7 @@ sudo apt-get install ros-indigo-ur-modern-driver -y
 sudo apt-get install ros-indigo-moveit-planners* -y
 sudo apt-get install ros-indigo-moveit-ros-planning* -y
 sudo apt-get install ros-indigo-moveit-ros-move-group -y
+sudo apt-get install ros-indigo-moveit-ros-control-interface -y
 ```
 To launch the planner on a local laptop, ensure ROS_IP (your machine IP) and the computer's IP (Husky IP) are exported properly:
 ```

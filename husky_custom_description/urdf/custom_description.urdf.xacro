@@ -25,8 +25,8 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 -->
 <robot name="husky" xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <xacro:arg name="laser_enabled" default="$(optenv HUSKY_LMS1XX_ENABLED false)" />
-  <xacro:arg name="ur5_enabled" default="$(optenv HUSKY_UR5_ENABLED false)" />
+  <xacro:arg name="laser_enabled" default="false" />
+  <xacro:arg name="ur5_enabled" default="true" />
   <xacro:arg name="kinect_enabled" default="false" />
 
   <xacro:include filename="$(find husky_description)/urdf/husky.urdf.xacro" />
@@ -81,14 +81,6 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
   <joint name="sensors_joint" type="fixed">
     <parent link="base_link" />
     <child link="sensors_link" />
-    <origin xyz="0.047 0.0 0.225" rpy="0.0 0.0 0.0" />
-  </joint>
-  
-  <link name="top_plate_link">
-  </link>
-  <joint name="top_joint" type="fixed">
-    <parent link="base_link" />
-    <child link="top_plate_link" />
     <origin xyz="0.047 0.0 0.225" rpy="0.0 0.0 0.0" />
   </joint>
 
