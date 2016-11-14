@@ -23,20 +23,8 @@
     <param name="tool_frame" type="str" value="$(arg tool_frame)"/>
   </node>
 
-  <!-- Load controller settings -->
-  <!-- rosparam file="$(find ur_modern_driver)/config/ur5_controllers.yaml" command="load"/ -->
-
-  <!-- spawn controller manager -->
-  <!-- node name="ros_control_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="joint_state_controller" / -->
-
   <!-- URDF update for FT -->
   <node pkg="tf" type="static_transform_publisher" name="FT300_static" args="0.02 0.0 0.0 0.0 1.57 0.0 ur5_arm_ee_link robotiq_force_torque_frame_id 100" />
-
-  <arg name="sim" default="false" />
-  <arg name="debug" default="false" />
-
-  <!-- Remap follow_joint_trajectory -->
-  <remap from="arm_controller/follow_joint_trajectory" to="follow_joint_trajectory"/>
 
 
 </launch>
