@@ -18,6 +18,12 @@ sudo apt-get install ros-indigo-moveit-ros-planning* -y
 sudo apt-get install ros-indigo-moveit-ros-move-group -y
 sudo apt-get install ros-indigo-moveit-ros-control-interface -y
 ```
+
+On the system with a user interface (either the robot or laptop, user computer, etc) you will also need to install:
+```
+sudo apt-get install ros-indigo-moveit-visual-tools
+```
+
 To launch the planner on a local laptop, ensure ROS_IP (your machine IP) and the computer's IP (Husky IP) are exported properly (you may have to edit your /etc/hosts file):
 ```
 export ROS_IP=192.168.131.X
