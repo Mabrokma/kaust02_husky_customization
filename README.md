@@ -18,8 +18,27 @@ sudo apt-get install ros-indigo-moveit-ros-planning* -y
 sudo apt-get install ros-indigo-moveit-ros-move-group -y
 sudo apt-get install ros-indigo-moveit-ros-control-interface -y
 ```
-To launch the planner on a local laptop, ensure ROS_IP (your machine IP) and the computer's IP (Husky IP) are exported properly:
+To launch the planner on a local laptop, ensure ROS_IP (your machine IP) and the computer's IP (Husky IP) are exported properly (you may have to edit your /etc/hosts file):
 ```
 export ROS_IP=192.168.131.X
 export ROS_MASTER_URI=http://cpr-kaust02:11311
 ```
+
+On the robot, the UR5 driver should be brought up manually, as the UR5 arm can be powered on and off separately from the rest of the robot:
+```
+roslaunch kaust02_moveit ur5.launch
+```
+Once the driver is up, the planner can be started on the robot, or on the laptop (as long as exported properly, etc) with:
+```
+roslaunch kaust02_moveit kaust02_planning_execution.launch
+```
+
+Once both of the above steps are done, the user interface may be launched on the user laptop with:
+```
+roslaunch kaust02_moveit moveit_rviz.launch
+```
+
+Be sure to try out different planners, as some are significantly faster and more efficient than others.
+
+Notes:
+The Robotiq gripper fingers cannot be accurately simulated, as they are not sensored. It is suggested to keep the gripper closed if movements near the UR arm (self intersection) are being done.
