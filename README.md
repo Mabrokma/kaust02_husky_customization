@@ -40,5 +40,7 @@ roslaunch kaust02_moveit moveit_rviz.launch
 
 Be sure to try out different planners, as some are significantly faster and more efficient than others.
 
+![](http://i.imgur.com/tzbjJ6M.png)
+
 Notes:
 The Robotiq gripper fingers cannot be accurately simulated, as they are not sensored. It is suggested to keep the gripper closed if movements near the UR arm (self intersection) are being done.
